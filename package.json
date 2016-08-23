@@ -1,0 +1,38 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Build out the app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxm125230/2016-06-Final-Assessment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sxm125230/2016-06-Final-Assessment/issues"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.4.3",
+    "bootstrap": "^4.0.0-alpha.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.14.0",
+    "forge-oauth2": "^1.0.2",
+    "jquery": "^2.2.1",
+    "jwt-simple": "^0.2.0",
+    "lodash": "^4.6.1",
+    "machinepack-spotify": "0.0.3",
+    "mongoose": "^4.1.0",
+    "morgan": "^1.1.1",
+    "q": "^1.4.1",
+    "request": "^2.74.0",
+    "spotify-web-api-node": "^2.3.5"
+  },
+  "homepage": "https://github.com/sxm125230/2016-06-Final-Assessment#readme"
+}

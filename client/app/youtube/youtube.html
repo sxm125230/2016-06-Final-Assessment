@@ -1,0 +1,38 @@
+<div   ng-controller='YoutubeController'>
+    <nav class="navbar" >
+      <div class="col-md-6 col-md-offset-3" >
+        <div class="search-bar form-inline" >
+          <input id="search" class="form-control" type="text" ng-model='query'><button class="btn hidden-sm-down" ng-click="search(query)">
+          <span class="glyphicon glyphicon-search" >
+          </span>
+        </button>
+        </div>
+      </div>
+    </nav>
+  <div class="col-md-7" >
+    <div class="video-player" >
+      <div class="embed-responsive embed-responsive-16by9" >
+        <iframe class="embed-responsive-item" ng-src="https://www.youtube.com/embed/4ZAEBxGipoA" allowfullscreen="" ></iframe>
+      </div>
+      <div class="video-player-details" >
+        <h3 >{{playvideo.title}}</h3>
+        <div >{{playvideo.description}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div ng-repeat="video in videos" class="video-list media" >
+    <div class="video-list-entry" ng-model='video' ng-click="play(video)" >
+      <div class="media-left media-middle" >
+        <img class="media-object" ng-src="{{video.snippet.thumbnails.default.url}}">
+      </div>
+      <div class="media-body" >
+      <div class="video-list-entry-title" >{{video.snippet.title}}</div>
+        <div class="video-list-entry-detail" >{{video.snippet.description}}
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div

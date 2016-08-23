@@ -1,0 +1,19 @@
+<div id='signin'>
+  <h1>Sign In</h1>
+  <form name="signinForm" ng-submit="signin()">
+  	<label>Username</label>
+    <input type="text" name="username" ng-model="user.username" ng-minlength="5" ng-maxlength="12" required>
+            <p ng-show="signinForm.username.$error.minlength">Username is too short.</p>
+            <p ng-show="signinForm.username.$error.maxlength">Username is too long.</p>
+    
+    <label>Password</label>
+    <input type="password" name="password" ng-model='user.password' ng-minlength="8" ng-maxlength="15" required><br/>
+    		<p ng-show="signinForm.password.$error.minlength">Password is too short.</p>
+            <p ng-show="signinForm.password.$error.maxlength">Password is too long.</p>
+    		
+    <button ng-disabled="signinForm.$invalid">Sign In</button>
+  </form>
+  <a href="#/signup">Don't have an account? <strong>Sign up</strong> ...</a><br/>
+  <button>signin via Oxygen</button>
+    <a href="https://developer.api.autodesk.com/authentication/v1/authorize?response_type=code&client_id=GrVYNeLqf1YnATpnNPnnFdMcDDB0EfQR&redirect_uri=http://localhost:3000/oauth&scope=bucket:create%20bucket:read%20bucket:update%20bucket:delete%20data:write%20data:read%20data:create%20data:search">Login &rarr;</a>
+</div>
