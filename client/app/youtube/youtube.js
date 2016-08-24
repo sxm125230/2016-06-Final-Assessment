@@ -2,9 +2,10 @@ angular.module('youtube.songs', [])
 .controller('YoutubeController',
   ['$scope', 'YoutubeFactory', function ($scope, YoutubeFactory) {
    $scope.data={};
+   $scope.url="4ZAEBxGipoA";
    $scope.videos=[];
    $scope.playvideo={}
-   $scope.playvideo.url='https://www.youtube.com/embed/4ZAEBxGipoA'
+   $scope.playvideo.url="4ZAEBxGipoA"
    var options = {
     part: 'snippet',
     key: 'AIzaSyC5cHH_gy4riYA0hYwRANNxfM-auQ5Lijs',
@@ -29,7 +30,7 @@ angular.module('youtube.songs', [])
     });
   }
   $scope.play=function(video){
-    $scope.playvideo.url="https://www.youtube.com/embed/"+video.id.videoId;
+    $scope.playvideo.url=video.id.videoId;
     console.log($scope.playvideo.url)
     $scope.playvideo.title=video.snippet.title;
     $scope.playvideo.description=video.snippet.description;
