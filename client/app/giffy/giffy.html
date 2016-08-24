@@ -1,0 +1,8 @@
+<div id='container' >
+  <div class='navigation'>
+    <div> Trending giffs</div>
+    <div>
+      <div ng-repeat="data in data.links">
+      <iframe ng-src="{{data.embed_url}}" > </iframe>
+    </div>    
+</div>

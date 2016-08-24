@@ -19,6 +19,13 @@ app.use(function(req, res, next) {
 });
 
 
+function restrict(req, res, next) {
+  if (req.session.authenticated) {
+    next();
+  } else {
+    res.redirect('/signin');
+  }
+}
 
 mongoose.connect('mongodb://localhost/assessment');
 require('./config/middleware.js')(app, express);
