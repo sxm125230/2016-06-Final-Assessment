@@ -1,8 +1,12 @@
-<div id='container' >
-  <div class='navigation'>
-    <div> Trending giffs</div>
-    <div>
-      <div ng-repeat="data in data.links">
-      <iframe ng-src="{{data.embed_url}}" > </iframe>
-    </div>    
-</div>
+<div ng-controller="GiffyController">
+  <form novalidate class="simple-form">
+    search: <input type="text" ng-model="search" /><br />
+    <input type="submit" ng-click="update(search)" value="Save to favorites" />
+    <h2 ng-if="search !== ''"> {{search}} Gifs <h2>
+  </form>
+    <ul ng-repeat="gif in giflist">
+    <li><img src='{{gif.images.fixed_width_small.url}}'></img>
+    </li>
+    </ul>
+    <!--pre>selected = {{selected | json}}</pre-->
+  </div>

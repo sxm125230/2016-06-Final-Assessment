@@ -52,22 +52,37 @@ module.exports = function (app, express) {
 
     }); //app.get /oauth
 
-  app.get('/api/giffy', function(req, res){
+  app.get('/api/trending', function(req, res){
     console.log('in /map/results...', typeof(req), req.query);
     var options = req.query;
-    // two leg oauth
-    var options = {
-        method: 'GET',
-        url: options.url+'&limit=' + options.limit
+    options = {
+      method: 'GET',
+      url: options.url+'&limit=' + options.limit
     };
-
     console.log(options)
     request.get(options.url, function(err, data, body) {
-        if (err) {
-            return res.send('error');
-        }
-        console.log('response results: ', body);
-        res.send(body);
+      if (err) {
+          return res.send('error');
+      }
+      console.log('response results: ', body);
+      res.send(body);
+    });
+
+  });
+
+
+  app.get('/api/search', function(req, res){
+    var options = req.query;
+    options = {
+      method: 'GET',
+      url: options.url+'&q=' + options.q
+    };
+    request.get(options.url, function(err, data, body) {
+      if (err) {
+          return res.send('error');
+      }
+      console.log('response results: ', body);
+      res.send(body);
     });
 
   });
