@@ -25,8 +25,10 @@ angular.module('youtube', [
       controller: 'GiffyController',
       authenticate: true
     })
+    .when('/authenticated', {
+    })
     .when('/signout', {
-      })
+    })
     .otherwise({ redirectTo: '/youtube' });
 
     // We add our $httpInterceptor into the array
@@ -53,6 +55,10 @@ angular.module('youtube', [
 .run(function ($rootScope, $location, Auth) {
   if($location.$$path == '/signout'){
     Auth.signout();
+  }
+
+  if($location.$$path == '/authenticated'){
+    Auth.settoken();
   }
 
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {

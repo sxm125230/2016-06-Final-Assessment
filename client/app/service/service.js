@@ -34,6 +34,11 @@ angular.module('youtube.service', [])
     return !!$window.localStorage.getItem('com.assessment');
   };
 
+  var settoken = function  () {
+    $window.localStorage.setItem('com.assessment','gjwngrnklmem');
+    $location.path('/youtube');
+  };
+
   var signout = function () {
     $window.localStorage.removeItem('com.assessment');
     $location.path('/signin');
@@ -44,6 +49,7 @@ angular.module('youtube.service', [])
     signin: signin,
     signup: signup,
     isAuth: isAuth,
+    settoken: settoken,
     signout: signout
   };
 });

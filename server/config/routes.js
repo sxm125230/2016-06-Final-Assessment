@@ -41,7 +41,7 @@ module.exports = function (app, express) {
                         console.log('session accessToken: ', req.session.accessToken)
                         console.log('session established:', JSON.stringify(req.session))
 
-                        res.redirect('/#/youtube');
+                        res.redirect('/#/authenticated');
                     })
                 } //end of successul login
 
@@ -53,18 +53,15 @@ module.exports = function (app, express) {
     }); //app.get /oauth
 
   app.get('/api/trending', function(req, res){
-    console.log('in /map/results...', typeof(req), req.query);
     var options = req.query;
     options = {
       method: 'GET',
       url: options.url+'&limit=' + options.limit
     };
-    console.log(options)
     request.get(options.url, function(err, data, body) {
       if (err) {
           return res.send('error');
       }
-      console.log('response results: ', body);
       res.send(body);
     });
 
@@ -81,7 +78,6 @@ module.exports = function (app, express) {
       if (err) {
           return res.send('error');
       }
-      console.log('response results: ', body);
       res.send(body);
     });
 
